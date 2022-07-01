@@ -1,0 +1,21 @@
+Compare some programming languages. What are some of the unique traits of JavaScript vs. Java? How about COBOL vs. Go?
+
+JavaScript:
+Interpreted language, which means each line gets translated at runtime by the interpreter. Support of first-class functions
+, which means functions can be passed as arguments to other functions, can be assigned to variables, and can be returned by other functions.
+Very popular within the web, but can be also run locally without the need of a browser by using technologies like node.js.
+JS is a single-threaded language, which supports OOP, imperative and declarative styles.
+
+Java:
+In contrast to JavaScript, Java is a compiled language. The src-code gets compiled into Java-Byte-code which gets executed afterwards by the JRE.
+Java is strongly typed (JS uses dynamically typing), this means if we want to define a variable we have to set a specific data type for it (e.g. int, String, double, ...).
+Java is also an OO-language, which supports imperative styles. 
+
+COBOL:
+= Common Business Oriented Language. COBOL is a programming language designed for business use. COBOL is OO and uses an imperative style. COBOL is a
+compiled language.
+
+Go:
+Go is a compiled statically typed language (like Java). Go is mainly used for server-side backend programming and cloud based programming. 
+
+=> JS is the only out of these four languages, which is interpreted + uses dynamic typing. 

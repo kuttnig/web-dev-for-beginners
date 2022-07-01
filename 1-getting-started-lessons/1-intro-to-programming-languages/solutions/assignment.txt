@@ -1,0 +1,21 @@
+Type: Safety net (Tools which are used during development)
+Linter: A program which checks the code for errors (syntax, style, etc.) during the process of 
+writing code. A web developer would/should use this tool, to improve his/her code-quality and 
+to safe time (-> Linter tells the programmer about stylistic flaws + static errors can be caught, before the code is
+actually executed). An example for a popular linter would be ESLINT.
+ESLINT documentation: https://eslint.org/docs/latest/
+
+Type: Code transformation (Tool which transforms code)
+Code translators: Not all browsers support the newest technologies. With the the of a code translator for example "Babel", the 
+developer can make use of the newest language features, by using the latest version of it. Before the code gets deployed, the 
+translator run over it. This ensures that features used in the code, which are not supported by the targeted browsers are transformed (if possible).
+This ensures, that the developer can use the latest language features and don't have to cut the support for older browsers.
+Babel documentation: https://babeljs.io/docs/en/
+
+Type: Post development (Tools which are used after/during development)
+Testing tools: If a developer writes code, it should be verified, that the implemented functionality is correct. To do this we can use a testing framework like
+"Jest" and write Unit-tests, which covers parts of the the written code. We can combine this with other tools like "Travis CI" which will run tests automatically
+, every time code gets deployed. The use of tests and CI will help the developer to reduce errors / wrong behavior of functions and to deliver a more solid product
+(less errors) in the end.
+Jest documentation: https://jestjs.io/docs/getting-started
+Travis CI documentation: 

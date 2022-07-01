@@ -1,0 +1,20 @@
+Study a bit on the different languages available to the programmer. Try to write a line in one language, and then rewrite it in two others. What did you learn?
+
+// C
+#include <stdio.h>
+int main () {
+    printf("Hello, World.\n");
+    return 0;
+}
+
+// Java
+class Greeting {
+    public static void main (String [] args) {
+        System.out.println("Hello, World.");
+    }
+}
+
+// JavaScript
+console.log('Hello, World.');
+
+Each language uses a different syntax to describe the task.
