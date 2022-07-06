@@ -1,0 +1,27 @@
+In this exercise we will analyze the following website:
+https://www.w3.org/WAI/demos/bad/before/home.html
+
+-) Accessability problems:
+1) The navigation order (when using a keyboard) doesn't make sense.
+2) The author of the website didn't make use of semantic html (no use of header, article, section, footer, etc.). 
+Instead div's are used as containers for header, footer, etc..
+3) Some color contrasts don't rely to the given standard (contrast-ratio).
+4) There are some anchors on the page with the text "Click here".
+5) Missing alt-attribute on images.
+6) No additional layout for mobile devices (site is displayed on a mobile device like on a desktop device).
+
+-)Lighthouse analysis:
+Lighthouse analysis (see ../lighthouse-report.pdf)
+
+-)Possible improvements:
+1) Change navigation order to fit a logical order (left to right, top to bottom)
+2) Make use of semantic html. This means we use header for the top content of the page instead of a div.
+This also goes for other parts (footer, main, section, article).
+3) Change the color contrast of some parts of the website to satisfy the standard AA or AAA.
+4) Replace "Click here" anchors with meaningful text (description where the links lead to).
+5) Add alt-attribute to images (which describes what displayed on the image)
+6) Make the website responsive (for example use grid or flexbox to add a better support for mobile devices)
+7) Improve navigation on the website by simplifying the navigation (group similar items)
+8) Increase the border size of focused items to help users to see the currently focused item
+9) Use clearer instructions (e.g. select item -> select an item from the list)
+10) Use other font which is easier to read and doesn't stress the eye so much during long reading sessions
