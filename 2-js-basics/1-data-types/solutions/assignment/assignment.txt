@@ -1,0 +1,34 @@
+Data Types Practice
+
+Imagine you are building a shopping cart. Write some documentation on the data types that you would need to complete your shopping experience. How did you arrive at your choices?
+
+Data types:
+number
+This type is used to represent number (whole numbers, floating point numbers, positive and negative numbers). In our shopping cart example this data type could be used
+to represent the amount of items in a shopping cart, the price and many more things which are represented by numbers.
+
+string
+This type is used to represent a sequence of characters. Each character within a string has a position. For example the first character has position 0, the second
+character position 1, and so on. The length of a string is given by the number of characters. Within JS strings are immutable (like all
+other primitive values: number, string, boolean, bigint, undefined, null, symbol). This means is a string is created once and 
+it can't be modified (if we want to modify an existing string we create a new one and override the old one with the new one). In our shopping cart example this data type could be
+used to store the name / description of an item.
+
+boolean
+The boolean type has one of two possible values, which are 'true' or 'false'. In our shopping cart example this data type could be used to define additional properties of an
+item. For example if the item is available or not.
+
+bigint
+This data type is used to store integers which are too large for the normal number data type (this means we are not able to store floating point numbers within big integers).
+The normal number type can store integer values in the range: -(2^53 - 1) to 2^53 - 1 (We can check if a number is a safe integer using the Number.isSafeInteger(testValue)) function.
+This data type could also be used to store the amount / price of our items (but in case of a real world example - data type number should do the job).
+
+undefined
+This data type is used for variables which have been declared, but not initialized yet. 
+
+null
+This data type represents the intentional absence of any object value.
+
+symbol
+The symbol data type is guaranteed to be unique. Symbols are often used to generate a unique property key for objects. In our shopping cart example we could create a key as a
+unique identifier for each of our items.

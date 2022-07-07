@@ -1,0 +1,28 @@
+Javascript data types gotchas:
+
+-) Pay attention, when using the == operator. The == operator tries to convert both
+given variables into a matching type (unless the strict equality operator ===).
+For example:
+0 == '' // true
+0 === '' // false
+This happens because 0 and '' (the empty string) are considered as "falsy" values like (null, undefined, NaN, -0, 0n (BigInt)).
+The equality operator == casts both values to a type (which have a common nominator). Because of this 0 is converted to the boolean false and 
+the empty string too -> false == false => true.
+When using the strict equality operator the values are not cast. This leads to false.
+
+-) Pay attention when adding or subtracting a string to a number. 
+For example:
+'1000' + 1 // '10001'
+'1000' - 1 // 999
+This happens because of type conversion. In the first case the number which gets added to the string is converted into a string and then appended to the first value.
+In the second case the first value is converted to a number. Afterwards 1 gets subtracted from it. 
+
+-) Normally a division by 0 is not allowed. In Js we can do the following:
+1 / 0 // infinity
+0 / 0 // NaN (Not a Number)
+
+let age = 1; let Age = 2; age == Age // resolve to false - why?
+This is because JS is case sensitive. We declare and initialize two different variables. The first one 'age' has the value 1. And the second one 'Age' has
+the value 2. We don't use the strict equality operator in this cause, but it doesn't matter, because both variables are of the type number (-> no casts). Because 
+1 != 2 the output is false.
+
