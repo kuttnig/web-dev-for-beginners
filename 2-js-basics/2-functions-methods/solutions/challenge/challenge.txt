@@ -1,0 +1,3 @@
+Can you articulate in one sentence the difference between functions and methods? Give it a try!
+
+The difference between a function and a method is that a methods-call is always related to an object, while a function-call is not.
