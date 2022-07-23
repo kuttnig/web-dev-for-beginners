@@ -1,0 +1,35 @@
+body {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.posting {
+    position: relative;
+    border: solid;
+    border-style: double;
+    margin-bottom: 1%;
+    width: 100%
+}
+
+img {
+    position: absolute;
+    right: 0;
+    height: 100%;
+    z-index: -1;
+}
+
+header {
+    text-align: center;
+}
+
+header h1 {
+    display: inline-block;
+}
+
+header #sort-order {
+    display: inline-block;
+}
+
+footer p {
+    text-align: center;
+}
