@@ -39,6 +39,7 @@ h1 {
     max-width: 150%;
     max-height: 150%;
     z-index: 2;
+    touch-action: none;
 }
 
 .jar-walls {
