@@ -3,16 +3,34 @@ function dragElement(terrariumElement) {
         pos2 = 0,
         pos3 = 0,
         pos4 = 0;
+
     terrariumElement.onpointerdown = pointerDrag;
+    let clickCount = 0;
+    let timeOutId = null;
     function pointerDrag(e) {
         e.preventDefault();
-        console.log(e);
-
         pos3 = e.clientX;
         pos4 = e.clientY;
-
         document.onpointermove = elementDrag;
         document.onpointerup = stopElementDrag;
+
+        if (clickCount === 0) {
+            clickCount++;
+            timeOutId = setTimeout(() => {
+                clickCount = 0;
+            }, 500);
+        } else if (clickCount === 1) {
+            clearTimeout(timeOutId);
+            clickCount++;
+            timeOutId = setTimeout(() => {
+                clickCount = 0;
+                moveElementToFront(terrariumElement);
+            }, 500);
+        } else {
+            clearTimeout(timeOutId);
+            clickCount = 0;
+            moveElementToBack(terrariumElement);
+        }
     }
     function elementDrag(e) {
         pos1 = pos3 - e.clientX;
@@ -21,25 +39,54 @@ function dragElement(terrariumElement) {
         pos4 = e.clientY;
         console.log(pos1, pos2, pos3, pos4);
 
+        terrariumElement.style.border = "thin dotted grey";
         terrariumElement.style.left = terrariumElement.offsetLeft - pos1 + 'px';
         terrariumElement.style.top = terrariumElement.offsetTop - pos2 + 'px';
     }
     function stopElementDrag() {
+        terrariumElement.style.removeProperty('border');
+
         document.onpointerup = null;
         document.onpointermove = null;
     }
-    terrariumElement.dblclick = moveElementToFront;
-    function moveElementToFront() {
-        console.log(`${terrariumElement} was double-clicked!`);
+}
+
+function moveElementToFront(terrariumElement) {
+    let currentIndexOfElement = terrariumElements.indexOf(terrariumElement);
+    for (let i = currentIndexOfElement; i < (terrariumElements.length - 1); i++) {
+        let tmp = terrariumElements[i];
+        terrariumElements[i] = terrariumElements[i + 1];
+        terrariumElements[i + 1] = tmp;
+    }
+    updateZIndex();
+}
+
+function moveElementToBack(terrariumElement) {
+    let currentIndexOfElement = terrariumElements.indexOf(terrariumElement);
+    for (let i = currentIndexOfElement; terrariumElements.length > 1 && i > 0; i--) {
+        let tmp = terrariumElements[i];
+        terrariumElements[i] = terrariumElements[i - 1];
+        terrariumElements[i - 1] = tmp;
+    }
+    updateZIndex();
+}
+
+function updateZIndex() {
+    const zIndexOffset = 2;
+    for (let i = 0; i < terrariumElements.length; i++) {
+        terrariumElements[i].style.zIndex = (i + zIndexOffset).toString();
     }
 }
 
+const terrariumElements = [];
 const numPlants = 14;
 let baseString = 'plant';
-for (let i = 1; i <= numPlants; i++) {
-    let tmp = baseString.concat(i);
-    dragElement(document.getElementById(tmp));
+for (let i = 0; i < numPlants; i++) {
+    const terrariumElement = document.getElementById((baseString.concat(i + 1)));
+    terrariumElements.push(terrariumElement);
+    dragElement(terrariumElement);
 }
+updateZIndex();
 
 /*
 QUESTIONS:

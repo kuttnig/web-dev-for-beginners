@@ -7,8 +7,24 @@ body {
 }
 
 h1 {
-    color: #3a241d;
+    color: rgb(5, 152, 5);
     text-align: center;
+    -webkit-text-stroke: 1px rgb(159, 130, 92);
+    text-transform: uppercase;
+    word-wrap: break-word;
+    font-size: 1em;
+}
+
+#title {
+    position: absolute;
+    top: 0%;
+    left: 20%;
+    height: 16.5%;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .container {
@@ -56,7 +72,7 @@ h1 {
 
 .jar-top {
     width: 50%;
-    height: 5%;
+    height: 3%;
     position: absolute;
     bottom: 80.5%;
     left: 25%;

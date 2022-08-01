@@ -1,0 +1,41 @@
+For this task I chose the "Document" interface. The "Document" interface represents
+any webpage loaded into the browser and serves as an entry point into the webpages
+content (DOM-Tree).
+A commonly used method of this interface would be: document.getElementById(<name : string>).
+This method returns the element with the id which was passed as an argument to the function. 
+Element is the base class from which all element objects in a Document inherit. Element inherits its
+properties from its parent interface "Node". For more information please refer to:
+
+Document: https://developer.mozilla.org/en-US/docs/Web/API/Document
+Element: https://developer.mozilla.org/en-US/docs/Web/API/Element
+Node: https://developer.mozilla.org/en-US/docs/Web/API/Node
+
+
+For my example I chose the website "w3schools.com". If we inspect the landing page, we find a "path" element:
+<path id="wavepath" d="M0,0  L110,0C35,150 35,0 0,100z" fill="green" style="fill: red;"></path>
+(these elements are generic elements which are used to define shapes). On of its attributes is "id" which is currently set
+to "wavepath".
+Within the HTML-Document is some JS (embedded in the <script> tag). A function is defined which is called "setThemeMode". This
+function is used to style the page appropriate if dark/light theme is selected by the user. Function: 
+
+function setThemeMode() {
+  var x = localStorage.getItem("preferredmode");
+  var y = localStorage.getItem("preferredpagemode");  
+  if (x == "dark") {
+    document.body.className += " darktheme";
+    document.getElementById("radio_darkcode").checked = true;
+    
+  }
+  if (y == "dark") {
+    document.body.className += " darkpagetheme";
+    document.getElementById("wavepath").style.fill = "rgb(13,23,33)";
+    document.getElementById("radio_darkpage").checked = true;
+    
+  }
+}
+
+We can see that first variables x and y are retrieved from the local storage. Afterwards it is checked, if dark-theme is applied.
+If yes the elements which need to be styled are retrieved from the DOM (document.getElementById(...)). For example the path element is
+requested by its id ("wavepath"). After that the color of the element is changed (document.getElementById("wavepath").style.fill = "rgb(13,23,33)").
+
+Page: https://www.w3schools.com/
