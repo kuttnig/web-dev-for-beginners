@@ -1,0 +1,12 @@
+LocalStorage can be used to store key-value pairs in form of strings in the browser. The stored items are preserved
+during sessions. If we want to store items which are only stored during a session we could use SessionStorage. 
+APIs (Application Programming Interfaces) are a set of definitions which help to build and integrate application software. 
+For example there are several APIs offered by the browser (Fetch-api, canvas-api, cache-api, history-api, clipboard-api, ...) these
+interfaces allow the developers to add features to their application (in less time, they don't have to invent the wheel).
+There are also web-apis which can be used for example to retrieve resources/data (cat-images, todays weather, ... ).
+
+If we think about how these two things (api, LocalStorage) could work together, we could think of using localStorage to save 
+personal preferences (public information - i.e. no passwords, api-keys etc - (basically all information which you would share publicly on facebook)).
+For example the location, age, name of a user could be stored in the localStorage of the browser (after entered once). If the data is already stored within
+the localStorage the user doesn't have to enter his/her data again. API-requests are made using this data. We could also store responses from the api (public information)
+to avoid additional requests to the api (problem: we have to ensure, that the information stays up-to-date).
