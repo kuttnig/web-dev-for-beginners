@@ -1,0 +1,16 @@
+{
+    "name": "My first extension",
+    "description": "Load an image and a quote in every new tab",
+    "version": "1.0",
+    "manifest_version": 3,
+    "chrome_url_overrides": {
+        "newtab": "index.html"
+    },
+    "background": {
+        "service_worker": "background.js"
+    },
+    "permissions": [
+        "storage",
+        "system.display"
+    ]
+}

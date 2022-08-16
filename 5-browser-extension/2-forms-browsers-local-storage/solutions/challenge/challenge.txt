@@ -1,0 +1,14 @@
+Fetch API
+src: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
+
+This application-programming-interface provides an interface for fetching resources (including across the network).
+Fetch provides a definition for the "Request" and "Response" objects. For example  if we call the fetch() method - 
+a promise is returned to the caller. If the response is available the promise is fulfilled and it resolves to an Response-Object
+, which represents the response to the request. Like any other object we can refer to the properties of the object. For example we
+could use response.ok to check if the response was successful. 
+It also defines concepts such as the CORS semantics. (CORS = Cross-Origin-Policy)
+To make a request and fetch a resource the fetch() function can be used. 
+
+What makes an great API in your opinion?
+In my opinion a great API should be easy to use (naming of methods, properties, etc.).
+The API should also be well documented. 
